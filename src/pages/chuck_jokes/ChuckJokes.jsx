@@ -55,7 +55,7 @@ const ChuckJokes = () => {
         </div>
       </div>
       <div className='buttons-container'>
-        <Button size='large' color='success' onClick={joke} variant="contained">{jokes===descripcionInicial ? 'Cuentame un chiste' : 'Otro más...'}</Button>
+        <Button size='large' color='success' onClick={joke} variant="contained">{jokes===descripcionInicial ||jokes===pedirChiste ? 'Cuéntame un chiste' : 'Otro más...'}</Button>
         <div className='votes-container'>
           <Badge anchorOrigin={{vertical: 'top',horizontal:'left'}} badgeContent={haha} color="primary">
             <Button size='large'
