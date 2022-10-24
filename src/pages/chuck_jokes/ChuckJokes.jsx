@@ -26,7 +26,7 @@ const ChuckJokes = () => {
   }
   
   const vote = (vote) => {
-    if (voteJokeState || !jokes) {
+    if (voteJokeState || jokes === descripcionInicial) {
       alert('Ask for a joke...😘')
     } else if(vote === 'like') {
       setHaha(haha+1);
