@@ -11,6 +11,7 @@ import '../../styles/css/chuck.css'
 const ChuckJokes = () => {
 
   const descripcionInicial = 'Pide un chiste de Chuck Norris y luego calificalo con los botones debajo, NOTA: los chistes están en inglés. 👌';
+  const pedirChiste = `Pide un chiste...😁`;
 
   const [voteJokeState, setVoteJoke] = useState(false);
   const [duuh, setDuuh] = useState(0);
@@ -26,8 +27,8 @@ const ChuckJokes = () => {
   }
   
   const vote = (vote) => {
-    if (voteJokeState || jokes === descripcionInicial) {
-      alert('Ask for a joke...😘')
+    if (voteJokeState || jokes === descripcionInicial || jokes === pedirChiste) {
+      setJokes(pedirChiste)
     } else if(vote === 'like') {
       setHaha(haha+1);
       setVoteJoke(true);
@@ -39,24 +40,29 @@ const ChuckJokes = () => {
 
    return (
     <div className='card'>
-      <div className='card-content'>
-        <div className='img-container'>
+      {/* <h1 className='title-app'>Chuck jokes!</h1> */}
+      <div className='img-container'>
           <img className='img-chuck' alt='chuck-logo' src='https://api.chucknorris.io/img/chucknorris_logo_coloured_small@2x.png'/>
         </div>
+      <div className='card-content'>
+        {/* <div className='img-container'>
+          <img className='img-chuck' alt='chuck-logo' src='https://api.chucknorris.io/img/chucknorris_logo_coloured_small@2x.png'/>
+        </div> */}
         <div className='joke-container'>
-          <Typography variant="body2" style={{minHeight: '50px'}}>
+          <Typography variant="body1" style={{minHeight: '50px', fontFamily: 'Josefin Sans'}}>
             {jokes}
           </Typography>
         </div>
       </div>
       <div className='buttons-container'>
-        <Button size='large' color='success' onClick={joke} variant="contained">{jokes===descripcionInicial ? 'Tell me a joke' : 'Another one'}</Button>
+        <Button size='large' color='success' onClick={joke} variant="contained">{jokes===descripcionInicial ? 'Cuentame un chiste' : 'Otro más...'}</Button>
         <div className='votes-container'>
           <Badge anchorOrigin={{vertical: 'top',horizontal:'left'}} badgeContent={haha} color="primary">
-            <Button onClick={()=>vote('like')} color='secondary' variant="contained">Haha!</Button>
+            <Button size='large'
+             onClick={()=>vote('like')} color='secondary' variant="contained">¡JAJA!</Button>
           </Badge>
           <Badge badgeContent={duuh} color="warning">
-            <Button onClick={vote} color='error' variant="outlined">Duuh!</Button>
+            <Button size='large' onClick={vote} color='warning' variant="outlined">Duuh!</Button>
           </Badge>
         </div>
       </div>
