@@ -35,6 +35,18 @@ body {
         gap: 40px;   
       }
     }
+    .repo-container {
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      color: aliceblue;
+      gap: 12px;
+      a {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: smaller;
+        color: azure;
+      }
+    }
   }
 }
 

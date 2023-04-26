@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 // MUI 5
 import Button from '@mui/material/Button';
 import { Badge } from '@mui/material';
@@ -40,14 +40,10 @@ const ChuckJokes = () => {
 
    return (
     <div className='card'>
-      {/* <h1 className='title-app'>Chuck jokes!</h1> */}
       <div className='img-container'>
           <img className='img-chuck' alt='chuck-logo' src='https://api.chucknorris.io/img/chucknorris_logo_coloured_small@2x.png'/>
         </div>
       <div className='card-content'>
-        {/* <div className='img-container'>
-          <img className='img-chuck' alt='chuck-logo' src='https://api.chucknorris.io/img/chucknorris_logo_coloured_small@2x.png'/>
-        </div> */}
         <div className='joke-container'>
           <Typography variant="body1" style={{minHeight: '50px', fontFamily: 'Josefin Sans'}}>
             {jokes}
@@ -65,6 +61,12 @@ const ChuckJokes = () => {
             <Button size='large' onClick={vote} color='warning' variant="outlined">Duuh!</Button>
           </Badge>
         </div>
+      </div>
+      <div className='repo-container'>
+        <a href="https://github.com/Daniel-Barrios-J/chuck-jokes" target='_blank' rel='noreferrer'>
+          Go to the GitHub repository
+        </a>
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github icon" width={'24px'} />
       </div>
     </div>
   );
